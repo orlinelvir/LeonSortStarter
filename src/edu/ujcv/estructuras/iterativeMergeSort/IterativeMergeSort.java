@@ -19,7 +19,18 @@ public class IterativeMergeSort
         A[i] = temp[i];
     }
 }
-
+    public static void mergesort(int[] A)
+    {
+        int low = 0;
+        int high = A.length - 1;
+        int[] temp = Arrays.copyOf(A, A.length);
+        for (int m = 1; m <= high - low; m = 2*m)
+        {
+            for (int i = low; i < high; i += 2*m)
+            {
+                int from = i;
+                int mid = i + m - 1;
+                int to = Integer.min(i + 2 * m - 1, high);
 
 
 
