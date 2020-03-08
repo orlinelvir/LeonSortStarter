@@ -1,4 +1,4 @@
-package edu.ujcv.progra1;
+package edu.ujcv.estructuras.iterativeMergeSort;
 
 import java.util.PriorityQueue;
 
