@@ -31,7 +31,7 @@ public class IterativeMergeSort
                 int from = i;
                 int mid = i + m - 1;
                 int to = Integer.min(i + 2 * m - 1, high);
-
-
-
-
+                IterativeMerge(A, temp, from, mid, to);
+            }
+        }
+    }
