@@ -8,11 +8,11 @@ public class Main {
         int[] elementos = {0,55,67,17,20,10,99,27,9,2,1};
 
 
-        IterativeMergeSort s = new IterativeMergeSort();
-//        s.cycleSort(elementos);
+//        IterativeMergeSort s = new IterativeMergeSort();
+//        s.iterativeMergesort(elementos);
 
-//        MergeSort s = new MergeSort();
-//        s.mergeSort(elementos);
+        MergeSort s = new MergeSort();
+        s.mergeSort(elementos);
 
 //        HeapSort s = new HeapSort();
 //        s.heapSort(elementos);

@@ -6,79 +6,70 @@ import java.lang.*;
 public class IterativeMergeSort implements SortTester {
     public long sort(int[] array) {
         long start = System.currentTimeMillis();
-        new IterativeMergeSort(array);
+        new IterativeMergeSort();
 
         long end = System.currentTimeMillis();
 
         return end - start;
     }
 
-    public static void IterativeMerge(String args[])
-    {
-        int[] nums = {7,8,9,4,6,5,2,4,3,1,6,8,7,9,2,4,3,5,6};
+    public static void iterativeMergesort(int[] array) {
+        int current;
+        int leftStart;
+        int arraySize = array.length - 1;
+        for (current = 1; current <= arraySize; current = 2 * current) {
+            for (leftStart = 0; leftStart <= arraySize; leftStart += 2 * current) {
 
-        printArray(nums);
+                int mid = leftStart + current - 1;
+                int right = getMin(leftStart + 2 * current - 1, arraySize);
 
-        mergeSort(nums);
+                mergeArray(array, leftStart, mid, right);
+            }
 
-        printArray(nums);
-    }
-
-    public static void printArray(int[] nums) {
-        for(Integer num : nums)
-            System.out.print(num + " ");
-        System.out.println();
-    }
-
-    public static void mergeSort(int[] nums) {
-        if(nums == null) {
-            return;
         }
 
-        if(nums.length > 1) {
-            int mid = nums.length / 2;
+    }
 
-            // Split left part
-            int[] left = new int[mid];
-            for(int i = 0; i < mid; i++) {
-                left[i] = nums[i];
-            }
+    public static void mergeArray(int[] array, int left, int mid, int right) {
 
-            // Split right part
-            int[] right = new int[nums.length - mid];
-            for(int i = mid; i < nums.length; i++) {
-                right[i - mid] = nums[i];
-            }
+        int leftArraySize = mid - left + 1;
+        int rightArraySize = right - mid;
 
-            mergeSort(left);
-            mergeSort(right);
+        int[] leftArray = new int[leftArraySize];
+        int[] rightArray = new int[rightArraySize];
 
-            int i = 0;
-            int j = 0;
-            int k = 0;
+        for (int i = 0; i < leftArraySize; i++)
+            leftArray[i] = array[left + i];
 
-            // Merge left and right arrays
-            while(i < left.length && j < right.length) {
-                if(left[i] < right[j]) {
-                    nums[k] = left[i];
-                    i++;
-                } else {
-                    nums[k] = right[j];
-                    j++;
-                }
-                k++;
-            }
+        for (int i = 0; i < rightArraySize; i++)
+            rightArray[i] = array[mid + 1 + i];
 
-            // Collect remaining elements
-            while(i < left.length) {
-                nums[k] = left[i];
-                i++; k++;
-            }
+        int leftPtr = 0;
+        int rightPtr = 0;
+        int tempPtr = leftPtr;
 
-            while(j < right.length) {
-                nums[k] = right[j];
-                j++; k++;
-            }
+        while (leftPtr < leftArraySize && rightPtr < rightArraySize) {
+
+            if (leftArray[leftPtr] <= rightArray[rightPtr])
+                array[tempPtr++] = leftArray[leftPtr++];
+
+            else
+                array[tempPtr++] = rightArray[rightPtr++];
+        }
+
+        while (leftPtr <= left)
+            array[tempPtr++] = leftArray[leftPtr++];
+
+        while (rightPtr < right)
+            array[tempPtr++] = rightArray[rightPtr++];
+
+    }
+
+    public static int getMin(int left, int right) {
+        if (left <= right) {
+            return left;
+        } else {
+            return right;
         }
     }
 }

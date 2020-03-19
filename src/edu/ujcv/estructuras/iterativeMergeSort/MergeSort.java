@@ -3,9 +3,9 @@ package edu.ujcv.estructuras.iterativeMergeSort;
 public class MergeSort  implements SortTester{
     @Override
     public long sort(int[] array) {
-        long start = System.currentTimeMillis();
+        long start = System.nanoTime();
         mergeSort(array);
-        long end = System.currentTimeMillis();
+        long end = System.nanoTime();
         return end - start;
     }
     public  static int[] mergeSort(int[] arr){
