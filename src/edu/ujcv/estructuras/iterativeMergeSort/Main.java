@@ -11,11 +11,11 @@ public class Main {
 //        IterativeMergeSort s = new IterativeMergeSort();
 //        s.iterativeMergesort(elementos);
 
-        MergeSort s = new MergeSort();
-        s.mergeSort(elementos);
+//        MergeSort s = new MergeSort();
+//        s.mergeSort(elementos);
 
-//        HeapSort s = new HeapSort();
-//        s.heapSort(elementos);
+        HeapSort s = new HeapSort();
+        s.heapSort(elementos);
 
 //        BubleSort s = new BubleSort();
 //        s.bubleSort(elementos);
