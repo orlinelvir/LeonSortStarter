@@ -14,11 +14,11 @@ public class Main {
 //        MergeSort s = new MergeSort();
 //        s.mergeSort(elementos);
 
-        HeapSort s = new HeapSort();
-        s.heapSort(elementos);
+//        HeapSort s = new HeapSort();
+//        s.heapSort(elementos);
 
-//        BubleSort s = new BubleSort();
-//        s.bubleSort(elementos);
+        BubleSort s = new BubleSort();
+        s.bubleSort(elementos);
 
 
         for (int i = 0; i < elementos.length; i++) {
