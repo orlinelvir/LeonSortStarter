@@ -12,8 +12,6 @@ public class HeapSort implements SortTester {
 
         return end - start;
     }
-
-
     public void heapSort(int[] array) {
 
         int n = array.length;
@@ -21,8 +19,6 @@ public class HeapSort implements SortTester {
             Flotar(array, n, i);
             //Todo
         }
-
-
         for (int i = n - 1; i >= 0; i--) {
             int temp = array[0];
             array[0] = array[i];
@@ -30,30 +26,22 @@ public class HeapSort implements SortTester {
             Flotar(array, i, 0);
         }
     }
-
-
     public void Flotar(int[] arr, int n, int i) {
 
         int padre = i;
         int hijoIzquierdo = i * 2 + 1;
         int hijoDerecho = i * 2 + 2;
-
-
         if (hijoIzquierdo < n && arr[hijoIzquierdo] > arr[padre]) {
             padre = hijoIzquierdo;
         }
-
         if (hijoDerecho < n && arr[hijoDerecho] > arr[padre]) {
             padre = hijoDerecho;
         }
-
         if (padre != i) {
             int temp = arr[i];
             arr[i] = arr[padre];
             arr[padre] = temp;
             Flotar(arr, n, padre);
         }
-
-
     }
 }
