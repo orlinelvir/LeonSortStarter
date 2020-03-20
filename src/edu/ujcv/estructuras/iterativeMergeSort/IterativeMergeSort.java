@@ -1,6 +1,5 @@
 package edu.ujcv.estructuras.iterativeMergeSort;
 import java.lang.*;
-
 public class IterativeMergeSort implements SortTester {
     @Override
     public long sort(int[] array) {
@@ -15,19 +14,14 @@ public class IterativeMergeSort implements SortTester {
         {
             return;
         }
-
         if(array.length > 1)
         {
             int mid = array.length / 2;
-
-            // Split left part
             int[] left = new int[mid];
             for(int i = 0; i < mid; i++)
             {
                 left[i] = array[i];
             }
-
-            // Split right part
             int[] right = new int[array.length - mid];
             for(int i = mid; i < array.length; i++)
             {
@@ -35,43 +29,37 @@ public class IterativeMergeSort implements SortTester {
             }
             IterativeSort(left);
             IterativeSort(right);
-
-            int i = 0;
-            int j = 0;
-            int k = 0;
-
-            // Merge left and right arrays
-            while(i < left.length && j < right.length)
+            int s = 0;
+            int n = 0;
+            int c = 0;
+            while(s < left.length && n < right.length)
             {
-                if(left[i] < right[j])
+                if(left[s] < right[n])
                 {
-                    array[k] = left[i];
-                    i++;
+                    array[c] = left[s];
+                    s++;
                 }
                 else
                 {
-                    array[k] = right[j];
-                    j++;
+                    array[c] = right[n];
+                    n++;
                 }
-                k++;
+                c++;
             }
-            // Collect remaining elements
-            while(i < left.length)
+            while(s < left.length)
             {
-                array[k] = left[i];
-                i++;
-                k++;
+                array[c] = left[s];
+                s++;
+                c++;
             }
-            while(j < right.length)
+            while(n < right.length)
             {
-                array[k] = right[j];
-                j++;
-                k++;
+                array[c] = right[n];
+                n++;
+                c++;
             }
         }
     }
-
-
     public void IterativeSort() {
     }
 } 
