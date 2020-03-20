@@ -8,7 +8,6 @@ public class BubleSort implements SortTester {
         long end = System.nanoTime();
         return end - start;
     }
-
     public static int[] bubleSort(int[] a){
         for (int i = 0; i < a.length ; i++) {
             for (int j = 0; j < a.length; j++) {
