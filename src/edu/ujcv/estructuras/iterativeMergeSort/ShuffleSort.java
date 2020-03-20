@@ -13,26 +13,26 @@ public class ShuffleSort implements SortTester {
     }
     public int[] shuffleSort(int[] array) { // n * n ^n
         int [] temp = new int[array.length];
-        ArrayList<Integer> numeros = new ArrayList<>();
+        ArrayList<Integer> numbers = new ArrayList<>();
         while (true) {
 
             for (int i = 0; i < array.length; i++) {
-                numeros.add(array[i]);
+                numbers.add(array[i]);
             }
             Random r = new Random();
             for (int i = 0; i < temp.length; i++) {
-                temp[i] = numeros.remove(r.nextInt(numeros.size()));
+                temp[i] = numbers.remove(r.nextInt(numbers.size()));
             }
-            boolean ordenado = true;
-            for (int i = 0; i < temp.length && ordenado; i++) {
+            boolean order = true;
+            for (int i = 0; i < temp.length && order; i++) {
                 for (int j = i; j < temp.length; j++) {
                     if (temp[i] > temp[j]) {
-                        ordenado = false;
-                        numeros.clear();
+                        order = false;
+                        numbers.clear();
                     }
                 }
             }
-            if(ordenado){
+            if(order){
                 break;
             }
 

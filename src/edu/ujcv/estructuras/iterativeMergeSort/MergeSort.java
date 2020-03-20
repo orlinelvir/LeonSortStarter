@@ -15,33 +15,33 @@ public class MergeSort  implements SortTester{
         }
         // caso recursivo.
         int medio = arr.length /2;
-        int[] inferior = new int[medio];
-        int[] superior = new int[arr.length - medio];
+        int[] lower = new int[medio];
+        int[] higher = new int[arr.length - medio];
         for (int i = 0; i < medio; i++) {
-            inferior[i] = arr[i];
+            lower[i] = arr[i];
         }
-        for (int i = 0; i < superior.length ; i++) {
-            superior[i] = arr[i + inferior.length];
+        for (int i = 0; i < higher.length ; i++) {
+            higher[i] = arr[i + lower.length];
         }
-        return  merge(mergeSort(inferior), mergeSort(superior));
+        return  merge(mergeSort(lower), mergeSort(higher));
     }
     public static int[] merge(int[] a, int[] b){
         int[] retval = new int[a.length+ b.length];
-        int i = 0;
-        int j = 0;
-        int k = 0;
-        while (j < a.length && k < b.length ){
-            if(a[j] < b[k]){
-                retval[i++] = a[j++];
+        int s = 0;
+        int n = 0;
+        int c = 0;
+        while (n < a.length && c < b.length ){
+            if(a[n] < b[c]){
+                retval[s++] = a[n++];
             }else{
-                retval[i++] = b[k++];
+                retval[s++] = b[c++];
             }
         }
-        while (j < a.length){
-            retval[i++] = a[j++];
+        while (n < a.length){
+            retval[s++] = a[n++];
         }
-        while (k < b.length) {
-            retval[i++] = b[k++];
+        while (c < b.length) {
+            retval[s++] = b[c++];
         }
         return retval;
     }
