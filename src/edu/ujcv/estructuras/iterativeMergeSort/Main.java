@@ -1,9 +1,16 @@
 package edu.ujcv.estructuras.iterativeMergeSort;
 
+import java.util.Random;
+
 public class Main {
 
     public static void main(String[] args) {
-        int[] elementos = {0,55,67,17,20,10,99,27,9,2,1};
+        int[] elementos = new int[20000];
+
+        Random random = new Random();
+        for (int i = 0; i < elementos.length; i++) {
+            elementos[i] = Math.abs(random.nextInt(10000));
+        }
 
         IterativeMergeSort it = new IterativeMergeSort();
         it.IterativeSort(elementos);
@@ -26,10 +33,10 @@ public class Main {
         for (int i = 0; i < elementos.length; i++) {
             System.out.println(elementos[i]);
         }
-        System.out.println("\n \t\tEl Algoritmo Iterative Merge Sort tardó "+ it.sort(elementos)+ " Nanosegundos en ordenar el Arreglo");
-        System.out.println("\t\tEl Algoritmo MergeSort tardó: " + m.sort(elementos) + " Nanosegundos en ordenar el Arreglo.");
-        System.out.println("\t\tEl Algoritmo HeapSort tardó: " + h.sort(elementos) + " Nanosegundos en ordenar el Arreglo.");
-        System.out.println("\t\tEl Algoritmo BubbleSort tardó: " + b.sort(elementos) + " Nanosegundos en ordenar el Arreglo.");
+        System.out.println("\n \t\tEl Algoritmo Iterative Merge Sort tardó "+ it.sort(elementos)+ " Milisegundos en ordenar el Arreglo");
+        System.out.println("\t\tEl Algoritmo MergeSort tardó: " + m.sort(elementos) + " Milisegundos en ordenar el Arreglo.");
+        System.out.println("\t\tEl Algoritmo HeapSort tardó: " + h.sort(elementos) + " Milisegundos en ordenar el Arreglo.");
+        System.out.println("\t\tEl Algoritmo BubbleSort tardó: " + b.sort(elementos) + " Milisegundos en ordenar el Arreglo.");
 
     }
 }

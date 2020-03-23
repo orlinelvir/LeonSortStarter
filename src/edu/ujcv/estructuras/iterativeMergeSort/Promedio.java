@@ -36,7 +36,7 @@ public class Promedio {
         long t4 = it.sort(arreglo4);
         long t5 = it.sort(arreglo5);
         double pro1 = t1+t2+t3+t4+t5;
-        System.out.println("\nEl Promedio del Iterative Merge Sort es de: " + (pro1/5+ " Nanosegundos"));
+        System.out.println("\nEl Promedio del Iterative Merge Sort es de: " + (pro1/5+ " Milisegundos"));
 
         long ti1 = m.sort(arreglo1);
         long ti2 = m.sort(arreglo2);
@@ -44,7 +44,7 @@ public class Promedio {
         long ti4 = m.sort(arreglo4);
         long ti5 = m.sort(arreglo5);
         double pro2 = ti1+ti2+ti3+ti4+ti5;
-        System.out.println("El Promedio del MergeSort Sort es de: " + (pro2/5+ " Nanosegundos"));
+        System.out.println("El Promedio del MergeSort Sort es de: " + (pro2/5+ " Milisegundos"));
 
         long tie1 = h.sort(arreglo1);
         long tie2 = h.sort(arreglo2);
@@ -52,7 +52,7 @@ public class Promedio {
         long tie4 = h.sort(arreglo4);
         long tie5 = h.sort(arreglo5);
         double pro3 = tie1+tie2+tie3+tie4+tie5;
-        System.out.println("El Promedio del HeapSort Sort es de: " + (pro3/5+ " Nanosegundos"));
+        System.out.println("El Promedio del HeapSort Sort es de: " + (pro3/5+ " Milisegundos"));
 
         long tiem1 = b.sort(arreglo1);
         long tiemp2 = b.sort(arreglo2);
@@ -60,7 +60,7 @@ public class Promedio {
         long tiemp4 = b.sort(arreglo4);
         long tiemp5 = b.sort(arreglo5);
         double pro4 = tiem1+tiemp2+tiemp3+tiemp4+tiemp5;
-        System.out.println("El Promedio del BubbleSort Sort es de: " + (pro4/5+ " Nanosegundos"));
+        System.out.println("El Promedio del BubbleSort Sort es de: " + (pro4/5+ " Milisegundos"));
 
         /*long tiempo1 = s.sort(Arreglo1);
         long tiempo2 = s.sort(Arreglo2);
@@ -68,6 +68,6 @@ public class Promedio {
         long tiempo4 = s.sort(Arreglo4);
         long tiempo5 = s.sort(Arreglo5);
         double pro5 = timin1+timin2+timin3+timin4+timin5;
-        System.out.println("El Promedio del ShuffleSort Sort es de: " + (promedio5/5+ " Nanosegundos"));*/
+        System.out.println("El Promedio del ShuffleSort Sort es de: " + (promedio5/5+ " Milisegundos"));*/
     }
 }

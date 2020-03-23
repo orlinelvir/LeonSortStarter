@@ -3,9 +3,9 @@ import java.lang.*;
 public class IterativeMergeSort implements SortTester {
     @Override
     public long sort(int[] array) {
-        long start = System.nanoTime();
+        long start = System.currentTimeMillis();
         new IterativeMergeSort();
-        long end = System.nanoTime();
+        long end = System.currentTimeMillis();
         return end - start;
     }
     public static void IterativeSort(int[] array)

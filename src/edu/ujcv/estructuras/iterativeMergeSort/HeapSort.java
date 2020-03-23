@@ -3,9 +3,9 @@ import java.util.PriorityQueue;
 public class HeapSort implements SortTester {
     @Override
     public long sort(int[] array) {
-        long start = System.nanoTime();
+        long start = System.currentTimeMillis();
         heapSort(array);
-        long end = System.nanoTime();
+        long end = System.currentTimeMillis();
         return end - start;
     }
     public void heapSort(int[] array) {
@@ -22,13 +22,13 @@ public class HeapSort implements SortTester {
     }
     public void Flotar(int[] arr, int n, int i) {
         int boss = i;
-        int sub1 = i * 2 + 1;
-        int sub2 = i * 2 + 2;
-        if (sub1 < n && arr[sub1] > arr[boss]) {
-            boss = sub1;
+        int d1 = i * 2 + 1;
+        int i2 = i * 2 + 2;
+        if (d1 < n && arr[d1] > arr[boss]) {
+            boss = d1;
         }
-        if (sub2 < n && arr[sub2] > arr[boss]) {
-            boss = sub2;
+        if (i2 < n && arr[i2] > arr[boss]) {
+            boss = i2;
         }
         if (boss != i) {
             int temp = arr[i];
