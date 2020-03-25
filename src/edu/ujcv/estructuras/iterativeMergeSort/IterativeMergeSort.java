@@ -8,7 +8,7 @@ public class IterativeMergeSort implements SortTester {
         long end = System.currentTimeMillis();
         return end - start;
     }
-    public static void IterativeSort(int[] array)
+    public void IterativeSort(int[] array)
     {
         if(array == null)
         {
@@ -59,7 +59,5 @@ public class IterativeMergeSort implements SortTester {
                 c++;
             }
         }
-    }
-    public void IterativeSort() {
     }
 } 
